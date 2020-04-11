@@ -14,7 +14,7 @@ public class MainMenuController : MonoBehaviour
     public void StartGame()
     {
         GameManager.instance.gameStartedFromMainMenu = true;
-        Debug.Log(GameManager.instance.gameStartedFromMainMenu);
+        SceneManager.LoadScene("Gameplay");
     }
 
     public void HignScoreMenu()
