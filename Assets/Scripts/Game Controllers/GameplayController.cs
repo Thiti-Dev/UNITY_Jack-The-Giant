@@ -9,13 +9,21 @@ public class GameplayController : MonoBehaviour
     public static GameplayController instance;
 
     [SerializeField]
-    private Text scoreText, coinText, lifeText;
+    private Text scoreText, coinText, lifeText , gameOverScoreText, gameOverCoinText;
 
     [SerializeField]
-    private GameObject pausePanel;
+    private GameObject pausePanel, gameOverPanel;
+
+    [SerializeField]
+    private GameObject readyButton;
     private void Awake()
     {
         MakeInstance();
+    }
+
+    void Start()
+    {
+        Time.timeScale = 0f;
     }
 
     void MakeInstance()
@@ -24,6 +32,20 @@ public class GameplayController : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    public void GameOverShowPanel(int finalScore,int finalCoinScore)
+    {
+        gameOverPanel.SetActive(true);
+        gameOverScoreText.text = finalScore.ToString();
+        gameOverCoinText.text = finalCoinScore.ToString();
+        StartCoroutine(GameOverLoadMainMenu());
+    }
+
+    IEnumerator GameOverLoadMainMenu()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void SetScore(int score)
@@ -56,5 +78,11 @@ public class GameplayController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void StartTheGame()
+    {
+        Time.timeScale = 1f;
+        readyButton.SetActive(false);
     }
 }
