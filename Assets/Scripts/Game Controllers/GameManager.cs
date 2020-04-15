@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
         MakeSingleton();
     }
 
+    void Start()
+    {
+        InitializeVariables();
+    }
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += LevelFinishedLoading;
@@ -54,7 +59,33 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void InitializeVariables()
+    {
+        if (!PlayerPrefs.HasKey("Game Initialized"))
+        {
+            Debug.Log("The game is found that It hasn't been set the Game Initialized yet");
+            GamePreferences.SetEasyDifficultyState(0);
+            GamePreferences.SetEasyDifficultyCoinScore(0);
+            GamePreferences.SetEasyDifficultyHighScore(0);
 
+            GamePreferences.SetMediumDifficultyState(1);
+            GamePreferences.SetMediumDifficultyCoinScore(0);
+            GamePreferences.SetMediumDifficultyHighScore(0);
+
+            GamePreferences.SetHardDifficultyState(0);
+            GamePreferences.SetHardDifficultyCoinScore(0);
+            GamePreferences.SetHardDifficultyHighscore(0);
+
+            GamePreferences.SetMusicState(0);
+            Debug.Log("Game has been initialized");
+
+            PlayerPrefs.SetInt("Game Initialized", 123);
+        }
+        else
+        {
+            //Debug.Log("Game has already been initialized");
+        }
+    }
 
     void MakeSingleton()
     {

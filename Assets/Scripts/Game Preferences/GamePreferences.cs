@@ -23,11 +23,10 @@ public static class GamePreferences
         return PlayerPrefs.GetInt(IsMusicOn);
     }
 
-    public static void GetMusicState(int state)
+    public static void SetMusicState(int state)
     {
-        PlayerPrefs.GetInt(IsMusicOn, state);
+        PlayerPrefs.SetInt(IsMusicOn, state);
     }
-
     public static int GetEasyDifficultyState()
     {
         return PlayerPrefs.GetInt(EasyDifficulty);
@@ -98,7 +97,7 @@ public static class GamePreferences
     {
         return PlayerPrefs.GetInt(MediumDifficultyCoinScore);
     }
-    public static void SetMeduimDifficultyCoinScore(int state)
+    public static void SetMediumDifficultyCoinScore(int state)
     {
         PlayerPrefs.GetInt(MediumDifficultyCoinScore, state);
     }
