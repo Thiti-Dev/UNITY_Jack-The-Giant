@@ -104,6 +104,56 @@ public class GameManager : MonoBehaviour
     {
         if (lifeScore < 0)
         {
+            Debug.Log($"Final results = score : {score}, coin : {coinScore}");
+            if(GamePreferences.GetEasyDifficultyState() == 1)
+            {
+                int highScore = GamePreferences.GetEasyDifficultyHighScore();
+                int coinHighScore = GamePreferences.GetEasyDifficultyCoinScore();
+
+                if(highScore < score)
+                {
+                    Debug.Log($"Setting the highScore , old : {highScore}");
+                    GamePreferences.SetEasyDifficultyHighScore(score);
+
+                }
+                if (coinHighScore < coinScore)
+                {
+                    GamePreferences.SetEasyDifficultyCoinScore(coinScore);
+
+                }
+            }
+            if (GamePreferences.GetMediumDifficultyState() == 1)
+            {
+                int highScore = GamePreferences.GetMediumDifficultyHighScore();
+                int coinHighScore = GamePreferences.GetMediumDifficultyCoinScore();
+
+                if (highScore < score)
+                {
+                    GamePreferences.SetMediumDifficultyHighScore(score);
+
+                }
+                if (coinHighScore < coinScore)
+                {
+                    GamePreferences.SetMediumDifficultyCoinScore(coinScore);
+
+                }
+            }
+            if (GamePreferences.GetHardDifficultyState() == 1)
+            {
+                int highScore = GamePreferences.GetHardDifficultyHighScore();
+                int coinHighScore = GamePreferences.GetHardDifficultyCoinScore();
+
+                if (highScore < score)
+                {
+                    GamePreferences.SetHardDifficultyHighscore(score);
+
+                }
+                if (coinHighScore < coinScore)
+                {
+                    GamePreferences.SetHardDifficultyCoinScore(coinScore);
+
+                }
+            }
             gameStartedFromMainMenu = false;
             gameRestartedAfterPlayerDied = false;
 

@@ -25,17 +25,18 @@ public class HighScoreController : MonoBehaviour
     {
         if(GamePreferences.GetEasyDifficultyState() == 1)
         {
+            Debug.Log($"Trying to set the highscore of easy, score : {GamePreferences.GetEasyDifficultyHighScore()} , coin : {GamePreferences.GetEasyDifficultyCoinScore()}");
             SetScore(GamePreferences.GetEasyDifficultyHighScore(), GamePreferences.GetEasyDifficultyCoinScore());
         }
 
         if (GamePreferences.GetMediumDifficultyState() == 1)
         {
-            SetScore(GamePreferences.GetMediumDifficultyState(), GamePreferences.GetMediumDifficultyState());
+            SetScore(GamePreferences.GetMediumDifficultyHighScore(), GamePreferences.GetMediumDifficultyCoinScore());
         }
 
         if (GamePreferences.GetHardDifficultyState() == 1)
         {
-            SetScore(GamePreferences.GetHardDifficultyState(), GamePreferences.GetHardDifficultyState());
+            SetScore(GamePreferences.GetHardDifficultyHighScore(), GamePreferences.GetHardDifficultyCoinScore());
         }
     }
 

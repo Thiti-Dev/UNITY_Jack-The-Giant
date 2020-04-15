@@ -63,7 +63,7 @@ public static class GamePreferences
     }
     public static void SetEasyDifficultyHighScore(int state)
     {
-        PlayerPrefs.GetInt(EasyDifficultyHighScore, state);
+        PlayerPrefs.SetInt(EasyDifficultyHighScore, state);
     }
 
     public static int GetMediumDifficultyHighScore()
@@ -72,7 +72,7 @@ public static class GamePreferences
     }
     public static void SetMediumDifficultyHighScore(int state)
     {
-        PlayerPrefs.GetInt(MediumDifficultyHighScore, state);
+        PlayerPrefs.SetInt(MediumDifficultyHighScore, state);
     }
 
     public static int GetHardDifficultyHighScore()
@@ -81,7 +81,7 @@ public static class GamePreferences
     }
     public static void SetHardDifficultyHighscore(int state)
     {
-        PlayerPrefs.GetInt(HardDifficultyHighScore, state);
+        PlayerPrefs.SetInt(HardDifficultyHighScore, state);
     }
 
     public static int GetEasyDifficultyCoinScore()
@@ -90,7 +90,7 @@ public static class GamePreferences
     }
     public static void SetEasyDifficultyCoinScore(int state)
     {
-        PlayerPrefs.GetInt(EasyDifficultyCoinScore, state);
+        PlayerPrefs.SetInt(EasyDifficultyCoinScore, state);
     }
 
     public static int GetMediumDifficultyCoinScore()
@@ -99,7 +99,7 @@ public static class GamePreferences
     }
     public static void SetMediumDifficultyCoinScore(int state)
     {
-        PlayerPrefs.GetInt(MediumDifficultyCoinScore, state);
+        PlayerPrefs.SetInt(MediumDifficultyCoinScore, state);
     }
 
     public static int GetHardDifficultyCoinScore()
@@ -108,7 +108,7 @@ public static class GamePreferences
     }
     public static void SetHardDifficultyCoinScore(int state)
     {
-        PlayerPrefs.GetInt(HardDifficultyCoinScore, state);
+        PlayerPrefs.SetInt(HardDifficultyCoinScore, state);
     }
 
 }
